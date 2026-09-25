@@ -1,0 +1,13 @@
+{
+  "name": "interactive-story-editor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "互动故事编辑器：管理故事节点、选项、正文与结局（无数据库，JSON 文件存储）",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "node --watch backend/src/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

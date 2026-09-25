@@ -23,3 +23,5 @@ __pycache__/
 *.log
 .env
 .env.*
+# 故事数据（本地运行时生成，不入库；如需示例数据可手动提交）
+backend/data/story.json

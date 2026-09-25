@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>互动故事编辑器</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">✦</span>
+      <h1>互动故事编辑器</h1>
+    </div>
+    <nav class="view-tabs" role="tablist">
+      <button id="tab-edit" class="tab active" role="tab">✎ 编辑</button>
+      <button id="tab-preview" class="tab" role="tab">▶ 读者预览</button>
+    </nav>
+    <div class="topbar-right">
+      <span id="save-status" class="save-status" title="编辑内容会自动保存到后端 JSON 文件">未加载</span>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- ========== 编辑视图 ========== -->
+    <section id="view-edit" class="view view-edit active">
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <label class="story-title-wrap">
+            <span class="field-label">故事标题</span>
+            <input id="story-title" type="text" maxlength="200" placeholder="给故事起个名字" />
+          </label>
+          <button id="btn-add-node" class="btn btn-primary btn-block">＋ 新节点</button>
+        </div>
+        <div id="node-list" class="node-list" aria-label="节点列表"></div>
+        <div class="sidebar-foot">
+          <div id="stats-panel" class="stats-panel"></div>
+          <div id="validation-panel" class="validation-panel"></div>
+        </div>
+      </aside>
+
+      <div id="workspace" class="workspace">
+        <!-- 节点编辑器由 editor.js 渲染；空状态见占位 -->
+      </div>
+    </section>
+
+    <!-- ========== 预览视图 ========== -->
+    <section id="view-preview" class="view view-preview">
+      <div class="preview-layout">
+        <article class="reader" id="reader">
+          <!-- 预览由 preview.js 渲染 -->
+        </article>
+        <aside class="path-panel">
+          <div class="path-panel-head">
+            <h2>选择路径</h2>
+            <button id="btn-restart" class="btn btn-ghost btn-sm">↺ 重新开始</button>
+          </div>
+          <ol id="path-trail" class="path-trail"></ol>
+          <div id="path-info" class="path-info"></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
